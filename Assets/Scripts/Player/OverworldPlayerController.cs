@@ -6,7 +6,8 @@ using UnityEngine;
 public class OverworldPlayerController : PlayerController {
     public Transform Art;
     public Animator Anim;
-    public LayerMask FloorMask;
+    public LayerMask FloorMask, WallMask;
+    public float WallCheckDistance;
 
     ProximitySelector selector;
 
@@ -36,7 +37,15 @@ public class OverworldPlayerController : PlayerController {
             transform.position = new Vector3(transform.position.x, hit.point.y, transform.position.z);
         }
 
-        transform.position += new Vector3(GetMovementAxis.x * MoveSpeed, 0f, 0f) * Time.deltaTime;
+        float moveDir = GetMovementAxis.x * MoveSpeed;
+
+        hit = Physics2D.Raycast((Vector2)transform.position + new Vector2(0f, 1.5f), Vector2.right * GetMovementAxis.x, WallCheckDistance, WallMask);
+
+        if (hit) {
+            moveDir = 0f;
+        }
+
+        transform.position += new Vector3(moveDir, 0f, 0f) * Time.deltaTime;
     }
 
     public override void SetCutscene(bool enable) {
