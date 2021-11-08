@@ -15,61 +15,17 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   patternIndex:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   ditherThreshold:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 512
   ditherStrength:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   ditherScale:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
---- !u!114 &-2565988260822682289
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32eb3b8fb939d9b41b04b5621e6d36dd, type: 3}
-  m_Name: Fog
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  fogDensity:
-    m_OverrideState: 1
-    m_Value: 0.37
-  fogDistance:
-    m_OverrideState: 1
-    m_Value: 13.5
-  fogColor:
-    m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 0}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  fogNear:
-    m_OverrideState: 1
-    m_Value: 18.6
-  fogFar:
-    m_OverrideState: 1
-    m_Value: 100
-  fogAltScale:
-    m_OverrideState: 1
-    m_Value: 9.1
-  fogThinning:
-    m_OverrideState: 1
-    m_Value: 169
-  noiseScale:
-    m_OverrideState: 1
-    m_Value: 100
-  noiseStrength:
-    m_OverrideState: 1
-    m_Value: 0.05
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +40,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   components:
   - {fileID: -2960848761456212671}
-  - {fileID: -2565988260822682289}
   - {fileID: 318587324207408685}
 --- !u!114 &318587324207408685
 MonoBehaviour:
