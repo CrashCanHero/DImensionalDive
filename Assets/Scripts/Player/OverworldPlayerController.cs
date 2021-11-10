@@ -52,4 +52,8 @@ public class OverworldPlayerController : PlayerController {
         base.SetCutscene(enable);
         selector.enabled = !enable;
     }
+
+    public void SetFacing(bool FacingLeft) {
+        facingLeft = FacingLeft;
+    }
 }

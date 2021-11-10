@@ -1,9 +1,12 @@
+using PixelCrushers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SceneSwitcher : MonoBehaviour {
     public static SceneSwitcher Instance;
+
+    bool switching;
 
     private void Awake() {
         Instance = this;
@@ -14,10 +17,24 @@ public class SceneSwitcher : MonoBehaviour {
     }
 
     public void SwapToTC() {
-        FaderController.Instance.SwapToTC();
+        if (switching) {
+            return;
+        }
+        SceneTransitionEvents.Instance.SetSceneSwitchValues();
+        SaveSystem.LoadScene("TC");
+        switching = true;
     }
 
     public void SwapToOverworld() {
-        FaderController.Instance.SwaptoOverworld();
+        if (switching) {
+            return;
+        }
+        SceneTransitionEvents.Instance.SetSceneSwitchValues();
+        SaveSystem.LoadScene("Overworld - Dive Building - Interior");
+        switching = true;
+    }
+
+    void SetTransitionValues() {
+
     }
 }
